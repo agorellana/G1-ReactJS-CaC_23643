@@ -28,7 +28,7 @@
     border: 1px solid #693567;
     background-color:#693567;
 }
-.btnGo:hover{
+.btn.btnGo:hover{
     color: #fff;
     border: 2px solid #0000ff;
     background-color: #0000ff;
