@@ -1,3 +1,4 @@
+import "./Ecommerce.css";
 import { useEffect, useState } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import axios from "axios";
@@ -63,7 +64,7 @@ const Ecommerce = () => {
         <Col
           sm={4}
           key={index + '.' + producto.id}
-          className="d-flex justify-content-center mb-4 "
+          className="d-flex justify-content-center my-4 "
         >
           <Card style={{ width: "18rem", height: "100%" }}>
             <Card.Img
@@ -77,11 +78,11 @@ const Ecommerce = () => {
             />
 
             <Card.Body>
-              <Card.Title>{producto.title}</Card.Title>
+              <Card.Title className="titulo">{producto.title}</Card.Title>
 
-              <Card.Text className="mb-5">${producto.price} ARS</Card.Text>
+              <Card.Text className="price mb-5">${producto.price} ARS</Card.Text>
               <div>
-                <Button variant="primary" className="mb-4">
+                <Button className="btn btnGo mb-4">
                   Go somewhere
                 </Button>
               </div>
