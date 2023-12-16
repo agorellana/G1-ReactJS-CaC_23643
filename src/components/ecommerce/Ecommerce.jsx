@@ -58,13 +58,15 @@ const Ecommerce = () => {
     getProductsMercaLibre();
   }, [searchTerm]);
 
+
   return (
     <Row className="text-center">
+      <h1 id="tituloecommerce" className="tituloecommerce py-5">¡Aprovechá las mejores ofertas!</h1>
       {productos.map((producto, index) => (
         <Col
           sm={4}
           key={index + '.' + producto.id}
-          className="d-flex justify-content-center my-4 "
+          className="d-flex justify-content-center my-4"
         >
           <Card style={{ width: "18rem", height: "100%" }}>
             <Card.Img
