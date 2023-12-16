@@ -50,13 +50,14 @@ export const Header = () => {
       <Navbar expand="lg" className="navbar">
       <Container fluid>
       
-        <Navbar.Brand href="#" >
-         
+        <Navbar.Brand href="#">
           <img className="logo"
             src="https://cdn-icons-png.flaticon.com/512/8146/8146003.png"
             alt="carrito"
           />
-     <span className="tec">Tecno-</span><span className="cod">Code</span></Navbar.Brand>
+          <span className="tec">Tecno-</span>
+          <span className="cod">Code</span>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -65,7 +66,7 @@ export const Header = () => {
             navbarScroll
           >
             <Nav.Link href="#action1">Inicio</Nav.Link>
-           {/* <Nav.Link href="#action2">Link</Nav.Link>  */}
+            <Nav.Link href="#footer">Más promos</Nav.Link>
             <NavDropdown title="Cuenta" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Ingresar</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -76,7 +77,6 @@ export const Header = () => {
                 Ayuda
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#footer">Ir al final</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
