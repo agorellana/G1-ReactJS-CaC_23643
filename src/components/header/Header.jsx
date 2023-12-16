@@ -15,6 +15,10 @@ export const Header = () => {
   const navigate = useNavigate();
 
   const handleSubmitSearch = (event) => {
+    window.scrollTo({
+      top: 200,
+      behavior: "smooth",
+    })
     
     event.preventDefault();
     
@@ -36,25 +40,24 @@ export const Header = () => {
         
         const url = (searchText) ? `/search?q=${searchText}` : '/';
         navigate(url);
-
     }
 
     //console.log('DBG> handleOnKeyDown: '+ event.key);
   }
 
   return (
-    <header>
-      <Navbar expand="lg" className="bg-body-tertiary">
+    <header className="fixed-top">
+      <Navbar expand="lg" className="navbar">
       <Container fluid>
-      <div className="logo">
-          <img
+      
+        <Navbar.Brand href="#">
+          <img className="logo"
             src="https://cdn-icons-png.flaticon.com/512/8146/8146003.png"
             alt="carrito"
-            width="50px"
-            height="50px"
           />
-        </div>
-        <Navbar.Brand href="#" className="tec">Tecno-<span className="cod">Code</span></Navbar.Brand>
+          <span className="tec">Tecno-</span>
+          <span className="cod">Code</span>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -62,32 +65,31 @@ export const Header = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-           {/* <Nav.Link href="#action2">Link</Nav.Link>  */}
-            <NavDropdown title="Account" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Log in</NavDropdown.Item>
+            <Nav.Link href="#action1">Inicio</Nav.Link>
+            <Nav.Link href="#footer">Más promos</Nav.Link>
+            <NavDropdown title="Cuenta" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">Ingresar</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
-                Register
+                Registrarse
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action5">
-                Help
+                Ayuda
               </NavDropdown.Item>
             </NavDropdown>
-          
           </Nav>
           <Form className="d-flex">
             <Form.Control
               type="search"
-              placeholder="Search"
+              placeholder="Busqueda..."
               className="me-2"
               aria-label="Search"
               value={searchText}
               onChange={(event) => (setSearchText(event.target.value)) }
               onKeyDown={(event) => (handleOnKeyDown(event))}
             />
-            <Button variant="outline-success"
-                    onClick={handleSubmitSearch} >Search</Button>
+            <Button className="btn btnSearch"
+                    onClick={handleSubmitSearch} >Buscar</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
