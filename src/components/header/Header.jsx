@@ -76,7 +76,7 @@ export const Header = () => {
                 Ayuda
               </NavDropdown.Item>
             </NavDropdown>
-          
+            <Nav.Link href="#footer">Ir al final</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
